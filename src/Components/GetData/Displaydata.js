@@ -10,7 +10,7 @@ const Displaydata = ({
 }) => {
   return (
     <Fragment>
-      <div className="label">
+      <div className="label ">
         <div>
           FirstName: <span> {firstName}</span>
         </div>

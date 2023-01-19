@@ -1,94 +1,85 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { InputField } from "../InputField/InputField";
 
- const FormComponent = () => {
-     
+const FormComponent = () => {
+  const [firstName, setFirstName] = useState("");
+  const [LastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gender, setGender] = useState("");
+  const [phonenumber, setPhone] = useState("");
+  const [stateOfOrigin, setStateOrigin] = useState("");
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [Gender, setGender] = useState('');
-    const [phone, setPhone] = useState('');
-    const [stateorigin, setStateOrigin] = useState('')
+  const userdetails = {
+    firstName,
+    LastName,
+    email,
+    gender,
+    phonenumber,
+    stateOfOrigin,
+  };
 
-    const userdetails = {
+  const SubmitData = (e) => {
+    console.log(userdetails);
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:5000/biodata", {
         firstName,
-        lastName,
+        LastName,
         email,
-        Gender,
-        phone,
-        stateorigin
-
-    }
-
-    const SubmitData = (e)=>{
-        e.preventDefault();
-      useEffect(()=>{
-        axios.post("http://localhost:5000/biodata", {
-            
-        })
+        gender,
+        phonenumber,
+        stateOfOrigin,
       })
-    }
+      .then((response) => console.log("posting data", response))
+      .catch((error) => console.log(error));
+  };
 
   return (
-    <div className='center'>
-        <form className="form" onSubmit={SubmitData}>
-    <div className="input_container">
-   <label className="input_label"><span className="label_text">First name: </span>
-   <input
- onChange={(e)=> setFirstName(e.target.value)}
+    <div className="center">
+      <form
+        className="form"
+      >
 
-   />
-   </label>
-</div>
-
-<div className="input_container">
-   <label className="input_label"><span className="label_text">Last name: </span>
-   <input
-   onChange={(e)=> setLastName(e.target.value)}
-   />
-   </label>
-</div>
+        <InputField
+        label="First name"
+        onchange={(e)=> setFirstName(e.target.value)}
+        type="text"
+        />
 
 
- <div className="input_subcontainer">
- <div className="input_container sub-container-item">
-    <label className="input_label"><span className="label_text">Email: </span>
-    <input
-    onChange={(e)=> setEmail(e.target.value)}/>
-    </label>
-  </div>
+        <InputField
+        label="Last name"
+        onchange={(e)=> setLastName(e.target.value)}
+        type="text"/>
+        
 
-  <div className="input_container sub-container-item">
-    <label className="input_label"><span className="label_text">Gender: </span>
-    <input
-    onChange={(e)=> setGender(e.target.value)}
-   />
-    </label>
-  </div>
- </div>
+        <InputField
+        label="Email"
+        type="text"
+        onchange={(e)=> setEmail(e.target.value)}/>
 
- <div className="input_subcontainer">
- <div className="input_container sub-container-item">
-    <label className="input_label"><span className="label_text">PhoneNumber: </span>
-    <input onChange={(e)=> setPhone(e.target.value)}/>
-    </label>
-  </div>
 
-  <div className="input_container sub-container-item">
-    <label className="input_label"><span className="label_text">State Of Origin </span>
-    <input
-    onChange={(e)=>setStateOrigin(e.target.value)}
-   />
-    </label>
-  </div>
- </div>
-<div className="btn_container">
-<button className="createAcc_btn" type="submit">Create account</button>
-</div>
-</form>
+<InputField
+type="tel"
+onchange={(e)=> setPhone(e.target.value)}
+label="Phone number"
+/>
+
+<InputField
+type="text"
+onchange={(e)=> setStateOrigin(e.target.value)}
+label="State of Origin"/>
+
+        <div className="btn_container">
+          <button className="createAcc_btn" type="submit" onClick={SubmitData}>
+            Create account
+          </button>
+        </div>
+      </form>
     </div>
-  )
-}
+  );
+};
 
 export default FormComponent;

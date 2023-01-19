@@ -9,7 +9,7 @@ function App() {
 <GetData/>
 </div>
 
-<div>
+<div className=''>
 <FormComponent/>
 </div>
 </div>
