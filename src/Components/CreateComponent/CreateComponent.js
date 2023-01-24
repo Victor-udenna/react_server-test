@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { InputField } from "../InputField/InputField";
 
-const FormComponent = () => {
+const CreateComponent = () => {
   const [firstName, setFirstName] = useState("");
   const [LastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -34,10 +34,13 @@ const FormComponent = () => {
       })
       .then((response) => console.log("posting data", response))
       .catch((error) => console.log(error));
+
+      // window.location.reload();
+      document.forms[0].reset();
   };
 
   return (
-    <div className="center">
+    <div className="center bg-blue-400 pb-20">
       <form
         className="form"
       >
@@ -69,6 +72,12 @@ label="Phone number"
 
 <InputField
 type="text"
+onchange={(e)=> setGender(e.target.value)}
+label="Gender"/>
+
+
+<InputField
+type="text"
 onchange={(e)=> setStateOrigin(e.target.value)}
 label="State of Origin"/>
 
@@ -82,4 +91,4 @@ label="State of Origin"/>
   );
 };
 
-export default FormComponent;
+export default CreateComponent;

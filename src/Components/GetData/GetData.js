@@ -10,7 +10,7 @@ import Displaydata from './Displaydata';
         // handle success
         const result = response.data;
         setMyresult(result)
-      })
+      }) 
       .catch(function (error){
         // handle error
         console.log(error)
@@ -18,7 +18,7 @@ import Displaydata from './Displaydata';
     }, [])
   return (
    <Fragment>
-    <div className='bg'>
+    <div className='bg-blue-400 pb-10 grid grid-cols-3'>
         {myresult.map((items)=>{
            return (<Displaydata
            key={items.id}
