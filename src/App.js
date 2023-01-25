@@ -1,6 +1,7 @@
 import React, { Fragment }  from 'react';
 import './App.css';
 import { UpdatePage } from './Page';
+// import {Createpage} from "./Page";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
 <div className='font-bold text-xl bg-blue-300 py-10 rounded-lg hover:cursor-pointer text-center'>Delete</div>
     </div> */}
 
+{/* <Createpage/> */}
   <UpdatePage/>
     
    </Fragment>

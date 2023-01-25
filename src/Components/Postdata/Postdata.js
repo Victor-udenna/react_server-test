@@ -24,9 +24,10 @@ const Postdata = () => {
     console.log(updateData);
     // firstNam
     e.preventDefault();
+    console.log(getData);
   };
 
-  console.log(getData);
+
  
 
 
@@ -34,15 +35,14 @@ const Postdata = () => {
     e.preventDefault();
     let Value = getData;
     console.log(Value)
-
-    // console.log(getData)
-    // axios.get(`http://localhost:5000/biodata/${getData}`)
-    // .then( function (response){
-    //   const userData = response.data;
-    // console.log(userData)
-    // }).catch(function (error){
-    //   console.log(error)
-    // })
+    console.log(getData)
+    axios.get(`http://localhost:5000/biodata/${getData}`)
+    .then( function (response){
+      const userData = response.data;
+    console.log(userData)
+    }).catch(function (error){
+      console.log(error)
+    })
   
 
   };
@@ -52,6 +52,9 @@ const Postdata = () => {
  
   return (
     <Fragment>
+
+      <div>
+      </div>
       <div className="bg-blue-500 py-20">
         <form className="flex w-50 justify-center items-center mx-auto px-10">
           <InputField
@@ -95,7 +98,7 @@ const Postdata = () => {
             onchange={(e) => setPhoneNumber(e.target.value)}
           />
 
-<InputField
+   <InputField
 type="text"
 onchange={(e)=> setGender(e.target.value)}
 label="Gender"/>

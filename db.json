@@ -71,6 +71,24 @@
       "phonenumber": "78i4r9398384384",
       "stateOfOrigin": "imo state",
       "id": 8
+    },
+    {
+      "firstName": "Victor",
+      "LastName": "okwuosa",
+      "email": "victorudenna@gmail.com",
+      "gender": "male",
+      "phonenumber": "099228829921",
+      "stateOfOrigin": "Georgia",
+      "id": 9
+    },
+    {
+      "firstName": "Gideion",
+      "LastName": "skurian",
+      "email": "skuieyw@gmail.com",
+      "gender": "Male",
+      "phonenumber": "098092828282",
+      "stateOfOrigin": "Kwara state",
+      "id": 10
     }
   ]
 }
