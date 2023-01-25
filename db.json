@@ -2,21 +2,21 @@
   "biodata": [
     {
       "id": 1,
-      "firstName": "Victor",
-      "LastName": "Okwuosa",
-      "email": "victor@gmail.com",
+      "firstName": "victor",
+      "LastName": "okwuosa",
+      "email": "victorudenna@gmail.com",
       "gender": "male",
-      "phonenumber": "09022449348",
-      "stateOfOrigin": "imo"
+      "phonenumber": "08089265725",
+      "stateOfOrigin": "imo state"
     },
     {
-      "id": 2,
-      "firstName": "john",
-      "LastName": "doe",
-      "email": "johndoe@yahoo.com",
+      "firstName": "sanni",
+      "surName": "emmanuel",
+      "email": "sanniayo@gmail.com",
+      "phoneNumber": "0808926572422",
       "gender": "male",
-      "phonenumber": "3442-3322-232",
-      "stateOfOrigin": "texas"
+      "stateOfOrigin": "osun",
+      "id": 2
     },
     {
       "id": 3,
@@ -28,21 +28,21 @@
       "stateOfOrigin": "oyo"
     },
     {
-      "id": 4,
-      "firstName": "mary",
-      "LastName": "johnson",
-      "email": "maryjohnson@yahoo.com",
-      "gender": "female",
-      "phonenumber": "1234-4430-221",
-      "stateOfOrigin": "Manchester"
+      "firstName": "okwuosa ",
+      "surName": "victor",
+      "email": "fff@gmail.com",
+      "phoneNumber": "0902282822",
+      "gender": "male",
+      "stateOfOrigin": "kano",
+      "id": 4
     },
     {
-      "firstName": "",
-      "LastName": "",
-      "email": "",
-      "gender": "",
-      "phonenumber": "",
-      "stateOfOrigin": "",
+      "firstName": "john",
+      "surName": "doe",
+      "email": "johndoe@gmail.com",
+      "phoneNumber": "080892657244",
+      "gender": "male",
+      "stateOfOrigin": "england",
       "id": 5
     },
     {

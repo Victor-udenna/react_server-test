@@ -8,7 +8,7 @@ const Postdata = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [stateOfOrigin, setStateOrigin] = useState("");
-  const [getData, setgetData] = useState("");
+  const [getApi, setGetApi] = useState("");
   const [gender, setGender] = useState("");
 
   const updateData = {
@@ -22,28 +22,35 @@ const Postdata = () => {
 
   const UpdateData = (e) => {
     console.log(updateData);
-    // firstNam
+    document.forms[0].reset();
     e.preventDefault();
-    console.log(getData);
+    axios.put(`http://localhost:5000/biodata/${getApi}`, {
+      firstName,
+      surName,
+      email,
+      phoneNumber,
+      gender,
+      stateOfOrigin,
+    })
   };
 
 
+
  
-
-
   const Updatevalue = (e) => {
     e.preventDefault();
-    let Value = getData;
-    console.log(Value)
-    console.log(getData)
-    axios.get(`http://localhost:5000/biodata/${getData}`)
+    document.forms[0].reset();
+    console.log(getApi)
+    axios.get(`http://localhost:5000/biodata/${getApi}`)
     .then( function (response){
       const userData = response.data;
-    console.log(userData)
+      console.log(userData);
+      alert('Populate the input field below')
     }).catch(function (error){
       console.log(error)
     })
-  
+   
+
 
   };
 
@@ -52,15 +59,12 @@ const Postdata = () => {
  
   return (
     <Fragment>
-
-      <div>
-      </div>
       <div className="bg-blue-500 py-20">
         <form className="flex w-50 justify-center items-center mx-auto px-10">
           <InputField
             label="Enter Id"
             type="tel"
-            onchange={(e)=> setgetData(e.target.value)}
+            onchange={(e)=> setGetApi(e.target.value)}
           />
 
           <button
