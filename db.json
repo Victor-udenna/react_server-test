@@ -1,21 +1,21 @@
 {
   "biodata": [
     {
-      "id": 1,
       "firstName": "victor",
-      "LastName": "okwuosa",
+      "surName": "okwuosa",
       "email": "victorudenna@gmail.com",
+      "phoneNumber": "0908863343",
       "gender": "male",
-      "phonenumber": "08089265725",
-      "stateOfOrigin": "imo state"
+      "stateOfOrigin": "imo",
+      "id": 1
     },
     {
-      "firstName": "sanni",
-      "surName": "emmanuel",
-      "email": "sanniayo@gmail.com",
-      "phoneNumber": "0808926572422",
+      "firstName": "John",
+      "surName": "doe",
+      "email": "johndoe@gmail.com",
+      "phoneNumber": "09088743362",
       "gender": "male",
-      "stateOfOrigin": "osun",
+      "stateOfOrigin": "texas",
       "id": 2
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "firstName": "john",
-      "surName": "doe",
+      "LastName": "doe",
       "email": "johndoe@gmail.com",
       "phoneNumber": "080892657244",
       "gender": "male",

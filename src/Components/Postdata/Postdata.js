@@ -1,15 +1,19 @@
 import React, { Fragment, useState } from "react";
 import { InputField } from "../InputField/InputField";
+// import FormComponent from "../FormComponent/FormComponent";
 import axios from "axios";
 
 const Postdata = () => {
+
+
   const [firstName, setFirstName] = useState("");
   const [surName, setSurName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [stateOfOrigin, setStateOrigin] = useState("");
-  const [getApi, setGetApi] = useState("");
   const [gender, setGender] = useState("");
+  const [Query, setQuery] = useState("")
+  const [result, setresult] = useState([])
 
   const updateData = {
     firstName,
@@ -20,11 +24,28 @@ const Postdata = () => {
     stateOfOrigin,
   };
 
+  const Updatevalue = (e) => {
+    e.preventDefault();
+    document.forms[0].reset();
+    console.log(Query)
+    axios.get(`http://localhost:5000/biodata/${Query}`)
+    .then( function (response){
+      const userData = response.data;
+      console.log(userData);
+      alert("user recieved, Update user details below")
+      return userData;
+    }).catch(function (error){
+      console.log(error)
+    })
+   
+
+  };
+
   const UpdateData = (e) => {
     console.log(updateData);
-    document.forms[0].reset();
     e.preventDefault();
-    axios.put(`http://localhost:5000/biodata/${getApi}`, {
+    alert('details updated successfully')
+    axios.put(`http://localhost:5000/biodata/${Query}`, {
       firstName,
       surName,
       email,
@@ -37,34 +58,16 @@ const Postdata = () => {
 
 
  
-  const Updatevalue = (e) => {
-    e.preventDefault();
-    document.forms[0].reset();
-    console.log(getApi)
-    axios.get(`http://localhost:5000/biodata/${getApi}`)
-    .then( function (response){
-      const userData = response.data;
-      console.log(userData);
-      alert('Populate the input field below')
-    }).catch(function (error){
-      console.log(error)
-    })
-   
-
-
-  };
-
-
-
- 
   return (
     <Fragment>
-      <div className="bg-blue-500 py-20">
+
+<div className="bg-blue-400 pb-10">
+<div className=" py-10">
         <form className="flex w-50 justify-center items-center mx-auto px-10">
           <InputField
             label="Enter Id"
             type="tel"
-            onchange={(e)=> setGetApi(e.target.value)}
+            onchange={(e)=> setQuery(e.target.value)}
           />
 
           <button
@@ -76,7 +79,7 @@ const Postdata = () => {
         </form>
       </div>
 
-      <div className="center bg-blue-400 py-20">
+      <div className=" center  py-20 w-100 edit_form">
         <form className="form">
           <InputField
             type="text"
@@ -124,6 +127,7 @@ label="Gender"/>
           </div>
         </form>
       </div>
+</div>
     </Fragment>
   );
 };
