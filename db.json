@@ -10,15 +10,6 @@
       "id": 1
     },
     {
-      "firstName": "John",
-      "surName": "doe",
-      "email": "johndoe@gmail.com",
-      "phoneNumber": "09088743362",
-      "gender": "male",
-      "stateOfOrigin": "texas",
-      "id": 2
-    },
-    {
       "id": 3,
       "firstName": "emmanuel",
       "LastName": "sanni",
@@ -80,15 +71,6 @@
       "phonenumber": "099228829921",
       "stateOfOrigin": "Georgia",
       "id": 9
-    },
-    {
-      "firstName": "Gideion",
-      "LastName": "skurian",
-      "email": "skuieyw@gmail.com",
-      "gender": "Male",
-      "phonenumber": "098092828282",
-      "stateOfOrigin": "Kwara state",
-      "id": 10
     }
   ]
 }
